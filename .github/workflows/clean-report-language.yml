@@ -3,8 +3,7 @@ name: One-time thesis report language cleanup
 on:
   push:
     branches: [main]
-    paths:
-      - .github/workflows/clean-report-language.yml
+  workflow_dispatch:
 
 permissions:
   contents: write
