@@ -1,0 +1,29 @@
+name: One-time thesis report language cleanup
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/clean-report-language.yml
+
+permissions:
+  contents: write
+
+jobs:
+  clean-report:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install --upgrade pip pymupdf
+      - run: python scripts/clean_public_language.py
+      - name: Commit cleaned report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/SPX_WRDS_Thesis_Report_2005_2021.pdf reports/latex/SPX_WRDS_Thesis_Report_2005_2021.tex
+          git commit -m "Polish thesis report language and metadata"
+          git push
