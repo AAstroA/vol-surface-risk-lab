@@ -1,0 +1,50 @@
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+
+# Notebooks and editors
+.ipynb_checkpoints/
+.DS_Store
+.idea/
+.vscode/
+
+# Downloaded and generated data
+data/raw/**
+data/interim/**
+data/processed/**
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+
+# Generated analysis artifacts
+reports/default_run/**
+reports/long_horizon_2005_2021/**
+
+# Private provenance retained locally but never published
+archive/legacy_*/**
+archive/legacy_*
+reports/original_thesis/**
+docs/legacy_audit.md
+scripts/build_legacy_manifest.py
+scripts/sanitize_legacy_notebooks.py
+
+# LaTeX and visual-review build products
+reports/latex/*.aux
+reports/latex/*.fdb_latexmk
+reports/latex/*.fls
+reports/latex/*.lof
+reports/latex/*.log
+reports/latex/*.lot
+reports/latex/*.out
+reports/latex/*.pdf
+reports/latex/*.toc
+tmp/**

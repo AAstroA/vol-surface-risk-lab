@@ -1,0 +1,55 @@
+project:
+  name: spx-options-risk-demo
+  random_seed: 20240818
+
+data:
+  source: demo
+  start_date: 2013-01-02
+  end_date: 2013-06-28
+  underlying_ticker: SPX
+  option_types: [call, put]
+  wrds_schema_candidates: [optionm_all, optionm]
+  cache_dir: data/raw/wrds
+  partition_by_year: false
+  server_side_filters: false
+
+filters:
+  min_option_price: 0.10
+  min_days_to_expiry: 15
+  max_days_to_expiry: 550
+  min_forward_moneyness: 0.70
+  max_forward_moneyness: 1.30
+  max_relative_spread: 1.00
+  min_open_interest: 0
+  min_daily_observations: 25
+  impute_missing_iv: false
+
+surface:
+  method: b_spline
+  comparison_methods: [polynomial, b_spline, thin_plate, linear]
+  comparison_frequency: 5
+  maturity_days: [30, 60, 90, 180]
+  moneyness_grid: [0.80, 0.85, 0.90, 0.95, 1.00, 1.05, 1.10, 1.15, 1.20]
+  iv_floor: 0.03
+  iv_cap: 2.00
+  spline_knots: 5
+  ridge_alpha: 0.0001
+
+pca:
+  components: 5
+  standardize: false
+
+risk:
+  methods: [psp, pca, pwg]
+  confidence_levels: [0.90, 0.95, 0.99]
+  rolling_window: 60
+  minimum_history: 20
+  scenarios: 2000
+  total_vega: 500000.0
+  covariance_shrinkage: true
+  psp_weighting: uniform
+  psp_decay: 0.985
+
+output:
+  root: sample_outputs/demo
+  sample_root: sample_outputs

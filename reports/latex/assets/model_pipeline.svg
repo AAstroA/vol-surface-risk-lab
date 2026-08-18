@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F8FBFD"/>
+      <stop offset="1" stop-color="#EEF5F6"/>
+    </linearGradient>
+    <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17324D"/>
+      <stop offset="1" stop-color="#2F6B9A"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#217F77"/>
+      <stop offset="1" stop-color="#43B3A7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#17324D" flood-opacity=".13"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#2F6B9A"/>
+    </marker>
+    <style>
+      .sans{font-family:Inter,Arial,Helvetica,sans-serif}
+      .eyebrow{font-size:19px;font-weight:800;letter-spacing:3.5px}
+      .title{font-size:44px;font-weight:800;letter-spacing:-1px}
+      .stage{font-size:18px;font-weight:800;letter-spacing:2.6px}
+      .cardTitle{font-size:23px;font-weight:800;letter-spacing:.4px}
+      .cardBody{font-size:17px;font-weight:500}
+      .small{font-size:14px;font-weight:650;letter-spacing:.2px}
+      .pill{font-size:15px;font-weight:800;letter-spacing:.5px}
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1470" cy="30" r="250" fill="#2A9D8F" opacity=".055"/>
+  <circle cx="80" cy="850" r="250" fill="#2F6B9A" opacity=".055"/>
+
+  <g class="sans">
+    <text x="80" y="78" class="eyebrow" fill="#2A9D8F">REPRODUCIBLE RESEARCH ARCHITECTURE</text>
+    <text x="80" y="128" class="title" fill="#17324D">SPX volatility-surface risk</text>
+    <text x="1520" y="88" text-anchor="end" class="cardBody" fill="#66717D">WRDS OptionMetrics · 2005–2021</text>
+
+    <!-- stage rail -->
+    <line x1="90" y1="184" x2="1510" y2="184" stroke="#C9D7E2" stroke-width="3"/>
+    <g>
+      <circle cx="180" cy="184" r="22" fill="#17324D"/><text x="180" y="191" text-anchor="middle" fill="white" class="small">01</text>
+      <text x="218" y="191" class="stage" fill="#17324D">DATA</text>
+      <circle cx="560" cy="184" r="22" fill="#2F6B9A"/><text x="560" y="191" text-anchor="middle" fill="white" class="small">02</text>
+      <text x="598" y="191" class="stage" fill="#2F6B9A">SURFACES</text>
+      <circle cx="1010" cy="184" r="22" fill="#2A9D8F"/><text x="1010" y="191" text-anchor="middle" fill="white" class="small">03</text>
+    <text x="1048" y="191" class="stage" fill="#217F77">RISK EXPERIMENTS</text>
+      <circle cx="1370" cy="184" r="22" fill="#E6A844"/><text x="1370" y="191" text-anchor="middle" fill="white" class="small">04</text>
+      <text x="1408" y="191" class="stage" fill="#A96D10">VALIDATE</text>
+    </g>
+
+    <!-- data card -->
+    <g filter="url(#shadow)">
+      <rect x="80" y="250" width="330" height="445" rx="26" fill="white" stroke="#D9E4EC" stroke-width="2"/>
+      <rect x="80" y="250" width="330" height="92" rx="26" fill="url(#navy)"/>
+      <path d="M80 316h330v26H80z" fill="url(#navy)"/>
+    </g>
+    <!-- database icon -->
+    <ellipse cx="135" cy="288" rx="27" ry="10" fill="none" stroke="white" stroke-width="3"/>
+    <path d="M108 288v28c0 6 12 10 27 10s27-4 27-10v-28 M108 302c0 6 12 10 27 10s27-4 27-10" fill="none" stroke="white" stroke-width="3"/>
+    <text x="182" y="291" class="cardTitle" style="font-size:20px" fill="white">WRDS OptionMetrics</text>
+    <text x="182" y="318" class="small" fill="#D9ECF7">Annual server-side partitions</text>
+    <text x="112" y="392" class="cardTitle" fill="#17324D">Raw market inputs</text>
+    <g class="cardBody" fill="#415466">
+      <text x="112" y="428">Option quotes &amp; open interest</text>
+      <text x="112" y="460">SPX index closes &amp; dividends</text>
+      <text x="112" y="492">OptionMetrics zero curve</text>
+    </g>
+    <line x1="112" y1="525" x2="378" y2="525" stroke="#E1E9EF" stroke-width="2"/>
+    <text x="112" y="568" class="cardTitle" fill="#17324D">Quality &amp; coordinates</text>
+    <g class="cardBody" fill="#415466">
+      <text x="112" y="604">Liquidity and maturity filters</text>
+      <text x="112" y="636">Forward moneyness F/K</text>
+      <text x="112" y="668">5 × 9 production grid</text>
+    </g>
+
+    <!-- arrows data to surfaces -->
+    <path d="M410 396 C455 396 456 360 492 360" fill="none" stroke="#2F6B9A" stroke-width="5" marker-end="url(#arrow)"/>
+    <path d="M410 548 C455 548 456 580 492 580" fill="none" stroke="#2F6B9A" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <!-- market surface card -->
+    <g filter="url(#shadow)">
+      <rect x="505" y="265" width="385" height="245" rx="25" fill="white" stroke="#C9DCE9" stroke-width="2"/>
+    </g>
+    <rect x="530" y="292" width="116" height="30" rx="15" fill="#DCEBF5"/>
+    <text x="588" y="313" text-anchor="middle" class="pill" fill="#2F6B9A">MARKET IV</text>
+    <text x="530" y="360" class="cardTitle" fill="#17324D">B-spline surface</text>
+    <text x="530" y="392" class="cardBody" fill="#415466">Observed implied volatility</text>
+    <text x="530" y="420" class="cardBody" fill="#415466">Hull guard · fixed nodes</text>
+    <!-- mini market surface -->
+    <g transform="translate(730 340) skewY(-16)" fill="none" stroke="#2F6B9A" stroke-width="3" opacity=".88">
+      <path d="M0 70 Q45 20 100 42 Q135 58 160 4"/>
+      <path d="M0 95 Q45 45 100 67 Q135 83 160 29" opacity=".75"/>
+      <path d="M0 120 Q45 70 100 92 Q135 108 160 54" opacity=".55"/>
+      <path d="M0 70v50 M40 36v59 M80 37v55 M120 50v42 M160 4v50" opacity=".35"/>
+    </g>
+    <rect x="530" y="450" width="330" height="38" rx="19" fill="#EFF5F9"/>
+    <text x="695" y="475" text-anchor="middle" class="pill" fill="#17324D">PCA · PCA-C · PSP · PWG</text>
+
+    <!-- heston surface card -->
+    <g filter="url(#shadow)">
+      <rect x="505" y="535" width="385" height="245" rx="25" fill="white" stroke="#BFDCD8" stroke-width="2"/>
+    </g>
+    <rect x="530" y="562" width="134" height="30" rx="15" fill="#DDF1EE"/>
+    <text x="597" y="583" text-anchor="middle" class="pill" fill="#217F77">HESTON SV</text>
+    <text x="530" y="630" class="cardTitle" fill="#17324D">Structural surface &amp; dynamics</text>
+    <text x="530" y="662" class="cardBody" fill="#415466">Daily v₀, κ, θ, ξ, ρ calibration</text>
+    <text x="530" y="690" class="cardBody" fill="#415466">Fourier price → BSM implied IV</text>
+    <!-- stochastic path icon -->
+    <g transform="translate(740 610)">
+      <path d="M0 76 C22 12 50 112 74 48 S120 8 154 60" fill="none" stroke="#2A9D8F" stroke-width="5"/>
+      <path d="M0 95 C30 58 54 92 82 70 S125 45 154 72" fill="none" stroke="#E9C46A" stroke-width="4" opacity=".95"/>
+      <circle cx="0" cy="76" r="5" fill="#2A9D8F"/><circle cx="154" cy="60" r="5" fill="#2A9D8F"/>
+    </g>
+    <rect x="530" y="724" width="330" height="38" rx="19" fill="#EAF6F4"/>
+    <text x="695" y="749" text-anchor="middle" class="pill" fill="#217F77">HS FILTER · P/Q STATE LAWS</text>
+
+    <!-- arrows surfaces to pnl -->
+    <path d="M890 388 H958" fill="none" stroke="#2F6B9A" stroke-width="5" marker-end="url(#arrow)"/>
+    <path d="M890 658 H958" fill="none" stroke="#2A9D8F" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <!-- risk cards -->
+    <g filter="url(#shadow)">
+      <rect x="972" y="265" width="285" height="245" rx="25" fill="url(#navy)"/>
+    </g>
+    <text x="1003" y="315" class="eyebrow" fill="#B9DBEF">SURFACE-RISK TEST</text>
+    <text x="1003" y="377" class="title" fill="white">wᵀ Δσ</text>
+    <text x="1003" y="418" class="cardBody" fill="#DCEAF3">Five scenario engines</text>
+    <text x="1003" y="450" class="cardBody" fill="#DCEAF3">Fixed vega · realized ΔIV</text>
+    <rect x="1003" y="468" width="220" height="27" rx="13" fill="#FFFFFF" opacity=".16"/>
+    <text x="1113" y="487" text-anchor="middle" class="small" fill="white">NO LOOK-AHEAD</text>
+
+    <g filter="url(#shadow)">
+      <rect x="972" y="535" width="285" height="245" rx="25" fill="url(#teal)"/>
+    </g>
+    <text x="1003" y="585" class="eyebrow" fill="#D7F1EE">FULL REVALUATION</text>
+    <text x="1003" y="631" class="cardTitle" style="font-size:17px" fill="white">PSP-FHS · Heston P/Q paths</text>
+    <text x="1003" y="660" class="small" fill="#E6FAF7">FIXED STRIKES · DELTA HEDGE</text>
+    <g>
+      <rect x="1003" y="681" width="62" height="45" rx="13" fill="white" opacity=".95"/>
+      <rect x="1080" y="681" width="62" height="45" rx="13" fill="white" opacity=".95"/>
+      <rect x="1157" y="681" width="62" height="45" rx="13" fill="white" opacity=".95"/>
+      <text x="1034" y="710" text-anchor="middle" class="pill" fill="#217F77">90%</text>
+      <text x="1111" y="710" text-anchor="middle" class="pill" fill="#217F77">95%</text>
+      <text x="1188" y="710" text-anchor="middle" class="pill" fill="#217F77">99%</text>
+    </g>
+    <text x="1003" y="758" class="small" fill="#E6FAF7">BSM / HESTON REPRICING</text>
+
+    <!-- arrows to validation -->
+    <path d="M1257 388 H1300" fill="none" stroke="#2F6B9A" stroke-width="5" marker-end="url(#arrow)"/>
+    <path d="M1257 658 H1300" fill="none" stroke="#2A9D8F" stroke-width="5" marker-end="url(#arrow)"/>
+
+    <!-- validation -->
+    <g filter="url(#shadow)">
+      <rect x="1313" y="265" width="230" height="515" rx="25" fill="white" stroke="#ECD9AE" stroke-width="2"/>
+      <rect x="1313" y="265" width="230" height="76" rx="25" fill="#F7E5B7"/>
+      <path d="M1313 315h230v26h-230z" fill="#F7E5B7"/>
+    </g>
+    <text x="1428" y="312" text-anchor="middle" class="cardTitle" fill="#8A5B0C">VALIDATION</text>
+    <g fill="#17324D">
+      <circle cx="1350" cy="389" r="20" fill="#E8EEF3"/><text x="1350" y="396" text-anchor="middle" class="small">✓</text>
+      <text x="1382" y="394" class="cardBody">UC · IND · CC</text>
+      <circle cx="1350" cy="456" r="20" fill="#E8EEF3"/><text x="1350" y="463" text-anchor="middle" class="small">↔</text>
+      <text x="1382" y="461" class="cardBody">HAC-DM tests</text>
+      <circle cx="1350" cy="523" r="20" fill="#E8EEF3"/><text x="1350" y="530" text-anchor="middle" class="small">Q</text>
+      <text x="1382" y="528" class="cardBody">Quantile loss</text>
+      <circle cx="1350" cy="590" r="20" fill="#E8EEF3"/><text x="1350" y="597" text-anchor="middle" class="small">3D</text>
+      <text x="1382" y="595" class="cardBody">Surface shape</text>
+      <circle cx="1350" cy="657" r="20" fill="#E8EEF3"/><text x="1350" y="664" text-anchor="middle" class="small">⚡</text>
+      <text x="1382" y="662" class="cardBody">Crisis regimes</text>
+    </g>
+    <rect x="1340" y="710" width="176" height="44" rx="22" fill="#FFF4D8"/>
+    <text x="1428" y="738" text-anchor="middle" class="pill" fill="#8A5B0C">AUDITABLE RESULTS</text>
+
+    <!-- footer safeguards -->
+    <rect x="80" y="824" width="1440" height="48" rx="24" fill="#17324D"/>
+    <text x="270" y="855" text-anchor="middle" class="pill" fill="white">DATE t INFORMATION ONLY</text>
+    <circle cx="493" cy="848" r="4" fill="#E9C46A"/>
+    <text x="690" y="855" text-anchor="middle" class="pill" fill="white">ANNUAL PARQUET CACHE</text>
+    <circle cx="902" cy="848" r="4" fill="#E9C46A"/>
+    <text x="1110" y="855" text-anchor="middle" class="pill" fill="white">CONFIGURATION FINGERPRINT</text>
+    <circle cx="1325" cy="848" r="4" fill="#E9C46A"/>
+    <text x="1422" y="855" text-anchor="middle" class="pill" fill="white">FIXED SEED</text>
+  </g>
+</svg>
