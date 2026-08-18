@@ -12,7 +12,7 @@ The complete empirical report is available at:
 
 [`reports/SPX_WRDS_Thesis_Report_2005_2021.pdf`](reports/SPX_WRDS_Thesis_Report_2005_2021.pdf)
 
-The LaTeX source and generated report fragments are under `reports/latex/`.
+A clean text source is provided at [`reports/SPX_WRDS_Thesis_Report_2005_2021.md`](reports/SPX_WRDS_Thesis_Report_2005_2021.md). Machine-generated empirical table fragments remain under `reports/latex/generated/` for auditability.
 
 ## Public browser versus empirical research
 
@@ -105,15 +105,15 @@ Every configured VaR level is evaluated with Kupiec unconditional coverage, Chri
 ## Project map
 
 ```text
-configs/                  dated, reviewable analysis settings
-src/spx_risk/data/        WRDS adapter, schema normalization, demo data
-src/spx_risk/analysis/    surface fit, PCA, Heston, risk, statistical tests
+configs/                    dated, reviewable analysis settings
+src/spx_risk/data/          WRDS adapter, schema normalization, demo data
+src/spx_risk/analysis/      surface fit, PCA, Heston, risk, statistical tests
 src/spx_risk/visualization/ thesis plots and diagnostic dashboards
-sample_outputs/demo/      reproducible synthetic sample figures, tables, and Parquet data
-reports/                  empirical report, LaTeX source, and table fragments
-archive/                  public provenance note; private legacy material stays local and ignored
-docs/                     roadmap, WRDS mapping, audit, and reproducibility notes
-tests/                    fast deterministic checks
+sample_outputs/demo/        reproducible synthetic sample figures, tables, and Parquet data
+reports/                    empirical PDF, clean text source, and result fragments
+archive/                    public provenance note; private legacy material stays local and ignored
+docs/                       roadmap, WRDS mapping, audit, and reproducibility notes
+tests/                      fast deterministic checks
 ```
 
 Start with [the research roadmap](docs/roadmap.md), [GUI blueprint](docs/gui_blueprint.md), [paper alignment](docs/paper_alignment.md), [WRDS mapping](docs/wrds_mapping.md), and [reproducibility notes](docs/reproducibility.md).
