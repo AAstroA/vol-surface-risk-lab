@@ -1,13 +1,7 @@
-# Generated and source reports
+# Report publication status
 
-Original reports and proposals are retained only in the private local project and are Git-ignored.
+The detailed SPX WRDS/OptionMetrics empirical report and generated empirical fragments are intentionally withheld from the public branch pending written review by Bocconi University's electronic-resource licensing staff.
 
-The default live WRDS run creates `default_run/figures/`, `default_run/tables/`, `default_run/processed/`, and `default_run/run_summary.json`. These paths are Git-ignored because they derive from licensed WRDS data. Recreate them with:
+The private institution-review package may be shared only with Bocconi personnel or counsel for the purpose of determining what aggregate tables, figures, coefficients, backtest results, and report text may be made public under the applicable WRDS and OptionMetrics agreements.
 
-```bash
-spx-risk run --config configs/default.yaml
-```
-
-Shareable deterministic equivalents are committed under `sample_outputs/demo/`.
-
-`SPX_WRDS_Thesis_Report_2005_2021.pdf` is the publication-ready project report. Its reproducible source, generated result-table fragments, and table-generation script are in `latex/`.
+Do not attach or transmit raw data, credentials, downloaded caches, vendor manuals, or row-level extracts during that review.
